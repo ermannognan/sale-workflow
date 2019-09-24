@@ -8,7 +8,7 @@ from odoo import api, fields
 from odoo.osv import osv
 
 PAYMENT_STATES = [
-    ('waiting', 'Waiting for payments'),
+    ('waiting', 'Waiting for payment'),
     ('done', 'Paid'),
     ('no', 'Not to pay')
 ]
@@ -26,7 +26,7 @@ class SaleOrder(osv.Model):
 
     def _search_orders_by_invoice_ids(self, operator, value):
         assert operator in ('=', 'in'), \
-            _('Operator %s not supported, use "ilike"') % operator
+            _('Operator %s not supported, use "in"') % operator
         if isinstance(value, (int, long)):
             value = [value]
         self.env.cr.execute("""
