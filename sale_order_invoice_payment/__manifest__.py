@@ -16,8 +16,7 @@ Tech Plus Sale.
         """,
     'sequence': 1,
     'depends': [
-        'account',
-        'sale',
+        'sale_order_invoice_search',
     ],
     'data': [
         'views/sale_view.xml',
