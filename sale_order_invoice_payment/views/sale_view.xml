@@ -37,6 +37,13 @@
                     <field name="payment_status"/>
                 </field>
 
+                <filter name="my_sale_orders_filter" position="before">
+                    <filter string="Not to pay" domain="[('payment_status', '=', 'no')]" name="sale_orders_not_to_pay"/>
+                    <filter string="Waiting for payment" domain="[('payment_status', '=', 'waiting')]" name="sale_orders_waiting_for_payment"/>
+                    <filter string="Paid" domain="[('payment_status', '=', 'done')]" name="sale_orders_paid"/>
+                    <separator/>
+                </filter>
+
             </field>
         </record>
 
